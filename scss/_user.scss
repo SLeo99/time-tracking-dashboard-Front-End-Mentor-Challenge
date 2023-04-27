@@ -1,0 +1,80 @@
+@use 'variables';
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: variables.$Blue;
+    padding: 1.5rem 1.75rem;
+    border-radius: 1rem;
+    position: relative;
+    z-index: 2;
+
+    & > img {
+        max-width: 72px;
+        border-radius: 50%;
+        outline: 3px solid variables.$White;
+    }
+
+    &__report {
+        & > span {
+            font-size: .75rem;
+            font-weight: variables.$wRubik300;
+            color: variables.$PaleBlue;
+        }
+        & > p {
+            letter-spacing: 1px;
+            font-weight: variables.$wRubik300;
+            color: variables.$White;
+            line-height: initial;
+            margin-top: .75rem;
+        }
+    }
+}
+
+.list-timetrack {
+    background-color: variables.$Darkblue;
+    display: flex;
+    justify-content: space-around;
+    padding: 2.5rem 0 1.5rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-top: -1rem;
+
+    &__btn {
+        text-decoration: none;
+        font-weight: variables.$wRubik400;
+        color: variables.$Desaturatedblue;
+        cursor: pointer;
+
+        &--active {
+            color: variables.$White;
+        }
+
+        &:hover {
+            color: variables.$White;
+            transition: .25s ease-in-out;
+        }
+
+        &--xd {
+            color: variables.$Desaturatedblue;
+        }
+        
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .user {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+        padding-top: 2.5rem;
+
+        &__report > span {
+            font-size: 1rem;
+        }
+
+        &__report > p {
+            font-size: 2.5rem;
+        }
+    }
+}

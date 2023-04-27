@@ -1,0 +1,123 @@
+@use 'variables';
+
+.card {
+
+    &__top {
+        position: relative;
+        background-color: variables.$lightRedWork;
+        border-radius: 1rem 1rem 0 0;
+        padding: 0 1rem 1rem;
+        display: flex;
+        justify-content: flex-end;
+        overflow: hidden;
+
+        &--play {
+            background-color: variables.$Softblue;
+        }
+
+        &--study {
+            background-color: variables.$lightRedStudy;
+        }
+
+        &--excercise {
+            background-color: variables.$Limegreen;
+            padding-bottom: 2.5rem;
+        }
+
+        &--social {
+            background-color: variables.$Violet;
+            padding-bottom: .2rem;
+
+            & > img {
+                margin-top: -.5rem;
+            }
+        }
+
+        &--selfcare {
+            background-color: variables.$Softorange;
+            padding-bottom: 2.25rem;
+
+            & > img {
+                margin-top: -.5rem;
+            }
+        }
+
+        &__actual-time {
+            font-size: 2.25rem;
+        }
+    }
+
+    &__bottom {
+        display: grid;
+        position: relative;
+        background-color: variables.$Darkblue;
+        border-radius: 1rem;
+        margin-top: -3rem;
+        padding: 1rem 0;
+        z-index: 2;
+
+        & > div {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0rem 1rem 0rem 1.5rem;
+
+        }
+
+        & > div > p {
+            color: variables.$White;
+            font-weight: variables.$wRubik300;
+            font-size: variables.$cardTitles;
+            pointer-events: none !important;
+        }
+
+        & > div:nth-child(1) > p {
+            font-size: variables.$cardTitles;
+            font-weight: variables.$wRubik500;
+        }
+
+        & > div:nth-child(1) > img {
+            cursor: pointer;
+            padding: 1rem 0 1rem .5rem;
+        }
+    }
+
+    &:hover > &__bottom {
+        background-color: variables.$hover;
+        transition: .3s ease;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .card {
+        &__bottom {
+            gap: 2rem;
+            padding: 2.5rem 0;
+        }
+    }
+}
+
+@media only screen and (min-width: 1240px) {
+    .card {
+        
+        &__bottom {
+            gap: 1rem;
+           padding: 1.5rem 0;
+
+           & > div:nth-child(2) {
+            flex-direction: column;
+            align-items: flex-start;
+           }
+        }
+
+        &__actual-time {
+            font-size: 3.5rem !important;
+        }
+        
+        &__previous-time {
+            font-size: 1rem !important;
+            color: variables.$PaleBlue;
+            opacity: .65;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use 'reset';
+@use 'variables';
+@use 'dashboard';
+@use 'user';
+@use 'card';
+
+body {
+    display: flex;
+    align-items: center;
+    // justify-content: center;
+    background-color: variables.$Verydarkblue;
+}
+
+.attribution {
+    position: absolute;
+    top: calc(0% + 1rem);
+    width: 100%;
+    text-align: center;
+    color: #fff;
+}
